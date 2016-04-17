@@ -1,11 +1,5 @@
 package com.biaxus.core;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Random;
-import java.util.Set;
-
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -22,22 +16,6 @@ import org.springframework.web.servlet.ThemeResolver;
 import org.springframework.web.servlet.theme.CookieThemeResolver;
 
 import com.biaxus.core.config.error.pages.EmbeddedServletContainerCustomizerImpl;
-import com.biaxus.core.domain.Authority;
-import com.biaxus.core.domain.AuthorityId;
-import com.biaxus.core.domain.AuthorityMode;
-import com.biaxus.core.domain.AuthorityType;
-import com.biaxus.core.domain.Cycle;
-import com.biaxus.core.domain.Enterprise;
-import com.biaxus.core.domain.EnterpriseRole;
-import com.biaxus.core.domain.EnterpriseRoleAuthority;
-import com.biaxus.core.domain.EnterpriseRoleAuthorityId;
-import com.biaxus.core.domain.EnterpriseRoleId;
-import com.biaxus.core.domain.Role;
-import com.biaxus.core.domain.RoleAuthority;
-import com.biaxus.core.domain.RoleAuthorityId;
-import com.biaxus.core.domain.User;
-import com.biaxus.core.domain.UserAuthority;
-import com.biaxus.core.domain.UserAuthorityId;
 import com.biaxus.core.domain.repository.AuthorityRepository;
 import com.biaxus.core.domain.repository.CycleRepository;
 import com.biaxus.core.domain.repository.EnterpriseRepository;
@@ -91,7 +69,7 @@ public class Application {
 	@Bean
 	public ThemeResolver themeResolver() {
 		CookieThemeResolver ctr = new CookieThemeResolver();
-		ctr.setDefaultThemeName("skin-blue-light");
+		ctr.setDefaultThemeName("skin-blue");
 		return ctr;
 	}
 

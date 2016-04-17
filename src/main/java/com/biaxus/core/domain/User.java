@@ -10,7 +10,6 @@ import java.util.Map;
 import java.util.Set;
 import java.util.SortedSet;
 import java.util.TreeSet;
-import java.util.function.Consumer;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -54,6 +53,11 @@ public class User implements UserDetails, CredentialsContainer {
 	private boolean credentialsNonExpired;
 	@Column(name = "ENABLED", nullable = false)
 	private boolean enabled;
+	
+	@Column(name = "NAME", nullable = false)
+	private String name;
+	@Column(name = "LAST_NAME", nullable = false)
+	private String lastName;
 
 	@JsonManagedReference("User.enterprise")
 	@ManyToOne(fetch = FetchType.LAZY)
@@ -63,7 +67,7 @@ public class User implements UserDetails, CredentialsContainer {
 	@JsonManagedReference("UserAuthority.user")
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
 	private Set<UserAuthority> userAuthorityList;
-
+	
 	@JsonBackReference("RememberMeToken.user")
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
 	private Set<RememberMeToken> rememberMeTokenList;
@@ -139,6 +143,30 @@ public class User implements UserDetails, CredentialsContainer {
 
 	public void setEnabled(boolean enabled) {
 		this.enabled = enabled;
+	}
+	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public void setAuthorities(Set<GrantedAuthority> authorities) {
+		this.authorities = authorities;
+	}
+
+	public void setSettings(Map<Setting, String> settings) {
+		this.settings = settings;
 	}
 
 	public Enterprise getEnterprise() {
