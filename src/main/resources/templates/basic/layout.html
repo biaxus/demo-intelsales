@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="basic/base">
+<head>
+	<meta name="_csrf" th:content="${_csrf.token}"/>
+	<meta name="_csrf_header" th:content="${_csrf.headerName}"/>
+</head>
+<body class="hold-transition fixed sidebar-mini" layout:fragment="body" th:classappend="${#themes.code('theme.class')}">
+	<div class="wrapper">
+		<header class="main-header">
+			<a href="/" class="logo"> <span class="logo-mini" th:utext="#{view.index.logoMini}"><b>B</b>S</span> <span class="logo-lg" th:utext="#{view.index.logoLg}"><b>Biaxus</b>LTDA</span>
+			</a>
+			<nav class="navbar navbar-static-top" role="navigation">
+				<a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button"> <span class="sr-only">Toggle navigation</span>
+				</a>
+				<div th:replace="basic/rigth-menu :: navbar-custom-menu" class="navbar-custom-menu"></div>
+			</nav>
+		</header>
+		<aside class="main-sidebar">
+			<!-- sidebar: style can be found in sidebar.less -->
+			<section class="sidebar">
+				<form action="#" method="get" class="sidebar-form">
+					<div class="input-group">
+						<input type="text" name="q" class="form-control" placeholder="Search..." /> <span class="input-group-btn">
+							<button type="submit" name="search" id="search-btn" class="btn btn-flat">
+								<i class="fa fa-search"></i>
+							</button>
+						</span>
+					</div>
+				</form>
+				<ul class="sidebar-menu">
+					<li class="header">Menu</li>
+					<th:block th:replace="basic/menu :: menu(${viewList})"></th:block>
+				</ul>
+			</section>
+		</aside>
+		<div th:replace="basic/content-wrapper :: content-wrapper('internal')" class="content-wrapper"></div>
+		<footer th:replace="basic/main-footer :: main-footer('internal')" class="main-footer"></footer>
+	</div>
+	<span th:replace="basic/basic-scripts :: basic-scripts"></span>
+	<span layout:fragment="custom-scripts"></span>
+</body>
+</html>

@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head></head>
+<body>
+	<div th:fragment="content-wrapper(calledFrom)" class="content-wrapper">
+		<div th:class="${calledFrom == 'external'?'container':''}">
+			<section th:replace="basic/content-header :: content-header"></section>
+			<section class="content" layout:fragment="content">Contenido Layout</section>
+		</div>
+	</div>
+</body>
+</html>

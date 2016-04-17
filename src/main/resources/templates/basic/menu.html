@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org">
+<head></head>
+<body>
+	<th:block th:fragment="menu(viewList_)">
+		<th:block th:each="view : ${viewList_}">
+			<th:block th:if="${view.showInMenu}">
+				<th:block th:if="${#lists.isEmpty(view.sonList)}">
+					<li th:class="${#lists.contains(currentViewList, view)?'active':''}"><a href="#" th:href="@{${view.url}}"><i class="fa fa-link" th:class="${view.style}"></i> <span th:text="#{${view.label}}">Link</span></a></li>
+				</th:block>
+				<th:block th:if="${not #lists.isEmpty(view.sonList)}">
+					<li th:class="${#lists.contains(currentViewList, view)?'active':''}"><a href="#"><i class="fa fa-link" th:class="${view.style}"></i> <span th:text="#{${view.label}}">Link</span><i class="fa fa-angle-left pull-right"></i></a>
+						<ul class="treeview-menu" th:style="${#lists.contains(currentViewList, view)?'display:block;':''}" th:classappend="${#lists.contains(currentViewList, view)?'menu-open':''}">
+							<th:block th:replace="basic/menu :: menu(${view.sonList})" ></th:block>
+						</ul></li>
+				</th:block>
+			</th:block>
+		</th:block>
+	</th:block>
+</body>
+</html>

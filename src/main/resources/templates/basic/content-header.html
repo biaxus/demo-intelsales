@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org">
+<head></head>
+<body>
+	<section th:fragment="content-header" class="content-header">
+		<h1>
+			<th:block th:each="_view : ${currentViewList}">
+				<span th:if="${#lists.isEmpty(_view.sonList)}" th:text="#{${_view.label}}">Top Navigation</span>
+			</th:block>
+		</h1>
+		<ol class="breadcrumb">
+			<th:block th:replace="basic/breadcumb :: breadcumb(${viewList})"></th:block>
+		</ol>
+	</section>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head></head>
+<body>
+	<footer th:fragment="main-footer(calledFrom)" class="main-footer">
+		<div th:class="${calledFrom == 'external'?'container':''}">
+			<div class="pull-right hidden-xs">
+				<b>Version</b> 0.0.1
+			</div>
+			<strong>Copyright &copy; 2015-2016 Intelsales.
+			</strong> All rights reserved.
+		</div>
+	</footer>
+</body>
+</html>

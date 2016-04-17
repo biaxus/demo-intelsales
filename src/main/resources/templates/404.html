@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="basic/layout-external">
+<head>
+<title th:text="#{view.index.title}">404</title>
+</head>
+<body>
+	<section class="content" layout:fragment="content">
+		<div class="error-page">
+			<h2 class="headline text-yellow">404</h2>
+			<div class="error-content">
+				<h3>
+					<i class="fa fa-warning text-yellow"></i> Oops! Page not found.
+				</h3>
+				<p>
+					We could not find the page you were looking for. Meanwhile, you may <a href="/">return to dashboard</a> or try using the search form.
+				</p>
+			</div>
+		</div>
+	</section>
+</body>
+</html>

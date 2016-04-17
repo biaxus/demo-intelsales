@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org">
+<head></head>
+<body>
+	<th:block th:fragment="breadcumb(viewList_)">
+		<th:block th:each="view : ${viewList_}">
+			<th:block th:if="${#lists.contains(currentViewList, view)}">
+				<th:block th:if="${#lists.isEmpty(view.sonList)}">
+					<li class="active"><i class="fa fa-link" th:class="${view.style}"></i><span th:text="#{${view.label}}">Link</span></li>
+				</th:block>
+				<th:block th:if="${not #lists.isEmpty(view.sonList)}">
+					<li><a href="#" th:href="@{${view.url}}"><i class="fa fa-link" th:class="${view.style}"></i> <span th:text="#{${view.label}}">Link</span></a></li>
+					<th:block th:replace="basic/breadcumb :: breadcumb(${view.sonList})"></th:block>
+				</th:block>
+			</th:block>
+		</th:block>
+	</th:block>
+</body>
+</html>

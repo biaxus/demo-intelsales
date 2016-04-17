@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="basic/layout">
+<head>
+<title th:text="#{view.dashboard.title}">Index</title>
+<link rel="stylesheet" href="/css/dashboard/dashboard.css" />
+</head>
+<body>
+	<section class="content" layout:fragment="content">
+		<div class="box">
+			<div class="box-header with-border">
+				<h5 class="box-title" th:text="#{view.dashboard.generalView}"></h5>
+			</div>
+			<div class="box-body table-responsive no-padding">
+				<table class="table bordered">
+					<thead>
+						<tr>
+							<th colspan="2" >VALUES COP</th>
+							<th colspan="3" class="border-left text-center">Sales vs Budget</th>
+							<th colspan="3" class="border-left text-center">Sales vs Historical (+/-)</th>
+						</tr>
+						<tr>
+							<th colspan="2">1. Region</th>
+							<th class="border-left text-center">Oct - 15</th>
+							<th class="text-center">Year to date</th>
+							<th class="text-center">2015 pj</th>
+							<th class="border-left text-center">Oct - 15</th>
+							<th class="text-center">Year to date</th>
+							<th class="text-center">Quarter Mobile</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="layout">
+							<td style="width: 1%"></td>
+							<td ></td>
+							<td style="width: 14%"></td>
+							<td style="width: 14%"></td>
+							<td style="width: 14%"></td>
+							<td style="width: 14%"></td>
+							<td style="width: 14%"></td>
+							<td style="width: 14%"></td>
+						</tr>
+						<tr>
+							<td colspan="2">Colombia</td>
+							<td class="border-left text-center"><span class="badge bg-green">91%</span></td>
+							<td class="text-center"><a href="#" th:href="@{/dashboard/detail}"><span class="badge bg-yellow">85%</span></a></td>
+							<td class="text-center"><span class="badge bg-yellow">81%</span></td>
+							<td class="border-left text-center"><span class="badge bg-green">9%</span></td>
+							<td class="text-center"><a href="#" th:href="@{/dashboard/detail}"><span class="badge bg-yellow">4%</span></a></td>
+							<td class="text-center"><span class="badge bg-green">8%</span></td>
+						</tr>
+						<tr>
+							<td/>
+							<td>Antioquia</td>
+							<td class="border-left text-center"><a href="#" th:href="@{/dashboard/detail}"><span class="badge bg-green">108%</span></a></td>
+							<td class="text-center"><span class="badge bg-yellow">88%</span></td>
+							<td class="text-center"><span class="badge bg-yellow">85%</span></td>
+							<td class="border-left text-center"><span class="badge bg-green">12%</span></td>
+							<td class="text-center"><a href="#" th:href="@{/dashboard/detail}"><span class="badge bg-green">11%</span></a></td>
+							<td class="text-center"><span class="badge bg-yellow">4%</span></td>
+						</tr>
+						<tr>
+							<td/>
+							<td>Centro</td>
+							<td class="border-left text-center"><a href="#" th:href="@{/dashboard/detail}"><span class="badge bg-red">79%</span></a></td>
+							<td class="text-center"><span class="badge bg-yellow">80%</span></td>
+							<td class="text-center"><span class="badge bg-red">73%</span></td>
+							<td class="border-left text-center"><span class="badge bg-yellow">2%</span></td>
+							<td class="text-center"><span class="badge bg-green">17%</span></td>
+							<td class="text-center"><a href="#" th:href="@{/dashboard/detail}"><span class="badge bg-green">8%</span></a></td>
+						</tr>
+						<tr>
+							<td/>
+							<td>Costa</td>
+							<td class="border-left text-center"><span class="badge bg-green">91%</span></td>
+							<td class="text-center"><span class="badge bg-green">94%</span></td>
+							<td class="text-center"><a href="#" th:href="@{/dashboard/detail}"><span class="badge bg-green">90%</span></a></td>
+							<td class="border-left text-center"><span class="badge bg-red">-22%</span></td>
+							<td class="text-center"><a href="#" th:href="@{/dashboard/detail}"><span class="badge bg-yellow">4%</span></a></td>
+							<td class="text-center"><span class="badge bg-green">9%</span></td>
+						</tr>
+						<tr>
+							<td/>
+							<td>Eje Cafetero</td>
+							<td class="border-left text-center"><span class="badge bg-green">90%</span></td>
+							<td class="text-center"><a href="#" th:href="@{/dashboard/detail}"><span class="badge bg-red">74%</span></a></td>
+							<td class="text-center"><span class="badge bg-red">72%</span></td>
+							<td class="border-left text-center"><span class="badge bg-green">45%</span></td>
+							<td class="text-center"><span class="badge bg-yellow">3%</span></td>
+							<td class="text-center"><a href="#" th:href="@{/dashboard/detail}"><span class="badge bg-green">8%</span></a></td>
+						</tr>
+						<tr>
+							<td/>
+							<td>Valle</td>
+							<td class="border-left text-center"><span class="badge bg-yellow">88%</span></td>
+							<td class="text-center"><a href="#" th:href="@{/dashboard/detail}"><span class="badge bg-green">91%</span></a></td>
+							<td class="text-center"><span class="badge bg-yellow">87%</span></td>
+							<td class="border-left text-center"><a href="#" th:href="@{/dashboard/detail}"><span class="badge bg-green">9%</span></a></td>
+							<td class="text-center"><a href="#" th:href="@{/dashboard/detail}"><span class="badge bg-red">-16%</span></a></td>
+							<td class="text-center"><span class="badge bg-green">9%</span></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</section>
+</body>
+</html>

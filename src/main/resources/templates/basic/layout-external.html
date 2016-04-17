@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="basic/base">
+<head></head>
+<body class="hold-transition layout-top-nav" layout:fragment="body" th:classappend="${#themes.code('theme.class')}">
+	<div class="wrapper">
+		<header class="main-header">
+			<nav class="navbar navbar-static-top">
+				<div class="container">
+					<div class="navbar-header">
+						<a href="/" class="navbar-brand" th:utext="#{view.index.logoLg}"><b>Admin</b>LTE</a>
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+							<i class="fa fa-bars"></i>
+						</button>
+					</div>
+					<div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+						
+					</div>
+					<div th:replace="basic/rigth-menu :: navbar-custom-menu" class="navbar-custom-menu"></div>
+				</div>
+			</nav>
+		</header>
+		<div th:replace="basic/content-wrapper :: content-wrapper('external')" class="content-wrapper"></div>
+		<footer th:replace="basic/main-footer :: main-footer('external')" class="main-footer"></footer>
+	</div>
+	
+	<span th:replace="basic/basic-scripts :: basic-scripts"></span>
+	<span layout:fragment="custom-scripts"></span>
+</body>
+</html>

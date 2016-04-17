@@ -1,0 +1,11 @@
+tr.layout, tr.layout td{
+	padding: 0px !important;
+}
+
+td.border-left{
+	border-left: 1px solid #f4f4f4;
+}
+
+.no-margin{
+	margin: 0px !important;
+}

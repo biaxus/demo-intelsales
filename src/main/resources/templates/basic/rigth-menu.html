@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org">
+<head></head>
+<body>
+	<div th:fragment="navbar-custom-menu" class="navbar-custom-menu">
+		<ul class="nav navbar-nav">
+			<li class="dropdown user user-menu" sec:authorize="isAuthenticated()"><a href="#" class="dropdown-toggle" data-toggle="dropdown"> <img
+					src="/webjars/adminlte/2.3.2/dist/img/user2-160x160.jpg" class="user-image" alt="User Image" /> <span class="hidden-xs" sec:authentication="name">Alexander Pierce</span>
+			</a>
+				<ul class="dropdown-menu">
+					<li class="user-header"><img src="/webjars/adminlte/2.3.2/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image" />
+						<p>
+							<span sec:authentication="name">Alexander Pierce - Web Developer</span> <small sec:authentication="principal.enterprise.description"></small>
+						</p>
+						<!--  -->
+					</li>
+					<li class="user-footer">
+						<form action="#" th:action="@{/rest/logout}" method="POST">
+							<button type="submit" class="btn btn-default btn-block btn-flat">Logout</button>
+						</form>
+					</li>
+				</ul></li>
+			<li sec:authorize="!isAuthenticated()"><a href="#" th:href="@{/login}" th:text="#{view.login.signin}"></a></li>
+		</ul>
+	</div>
+</body>
+</html>
