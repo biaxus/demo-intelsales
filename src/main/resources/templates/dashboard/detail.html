@@ -17,7 +17,12 @@
 			<div class="col-xs-12">
 				<div class="box">
 					<div class="box-header with-border">
-						<h3 class="box-title">Ventas Ene-Oct/14 vs Ene-Oct/15 <i class="fa fa-angle-right"></i> Región: Valle <i class="fa fa-angle-right"></i> Pdtos :Todos <i class="fa fa-angle-right"></i> Clientes: Todos <i class="fa fa-angle-right"></i> Reps:Todos</h3>
+						<h3 class="box-title">
+							Ventas Ene-Oct/14 vs Ene-Oct/15 <i class="fa fa-angle-right"></i>
+							Región: Valle <i class="fa fa-angle-right"></i> Pdtos :Todos <i
+								class="fa fa-angle-right"></i> Clientes: Todos <i
+								class="fa fa-angle-right"></i> Reps:Todos
+						</h3>
 
 						<div class="box-tools pull-right">
 							<button type="button" class="btn btn-box-tool"
@@ -27,10 +32,8 @@
 						</div>
 					</div>
 					<div class="box-body">
-						<div class="chart">
-							<canvas id="lineChart" style="height: 160px; width: 471px;"
-								width="471" height="160"></canvas>
-						</div>
+						<div id="lineChart"
+							style="min-width: 310px; height: 250px; margin: 0 auto"></div>
 					</div>
 				</div>
 			</div>
@@ -107,7 +110,10 @@
 	</section>
 	<div layout:fragment="custom-scripts">
 		<script type="text/javascript"
-			src="/webjars/adminlte/2.3.2/plugins/chartjs/Chart.min.js"></script>
+			src="/webjars/highcharts/4.2.3/highcharts.js"></script>
+		<script type="text/javascript"
+			src="/webjars/highcharts/4.2.3/modules/exporting.js"></script>
+		<script type="text/javascript" src="/js/plugin/highcharts/theme/dark-unica.js"></script>
 		<script type="text/javascript" src="/js/dashboard/dashboard.js"></script>
 
 	</div>
