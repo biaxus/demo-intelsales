@@ -1,4 +1,4 @@
-package com.biaxus.core.web;
+package com.biaxus.core.web.view.dashboard;
 
 import java.util.List;
 

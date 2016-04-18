@@ -1,4 +1,4 @@
-package com.biaxus.core.web;
+package com.biaxus.core.web.view.enterprise;
 
 import java.util.List;
 

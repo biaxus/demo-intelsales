@@ -127,5 +127,4 @@
 		</plugins>
 	</build>
 
-	<packaging>maven-plugin</packaging>
 </project>

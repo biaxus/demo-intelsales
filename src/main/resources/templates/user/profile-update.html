@@ -7,14 +7,15 @@
 </head>
 <body>
 	<section class="content" layout:fragment="content">
-		<div class="box">
-			<div class="box-header with-border">
-				<h5 class="box-title" th:text="#{view.profileUpdate.title}"></h5>
-			</div>
-			<div class="box-body">
-				
+		<div class="row">
+			<div class="col-sm-3"></div>
+			<div id="formContainer" class="col-sm-6">
+				<th:bock th:replace="user/profile-update-form :: profile-update-form"></th:bock>
 			</div>
 		</div>
 	</section>
+	<div layout:fragment="custom-scripts">
+		<script type="text/javascript" src="/js/user/profile-update.js"></script>
+	</div>
 </body>
 </html>
