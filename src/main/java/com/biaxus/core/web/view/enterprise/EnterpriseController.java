@@ -68,5 +68,4 @@ public class EnterpriseController {
 		model.addAttribute("enterpriseList", enterpriseList);
 		return "enterprise/enterprise-list :: enterprise-list";
 	}
-
 }

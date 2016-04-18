@@ -10,8 +10,9 @@
 					controller.save();
 				}
 			});
-			$listContainer.on('click', 'button[name="delete"]',
-					controller.deleteEnterprise);
+			$formContainer.on('click', '#cancel', function(e) {
+				controller.cancel();
+			});
 			$("#edit").data("state", "edit");
 		},
 		reinit : function() {
@@ -27,28 +28,31 @@
 				$formContainer.html(data);
 			}, fail = function(response) {
 				alert("error");
+			}, always = function(response) {
+				controller.reinit();
 			};
-			$.post('/fn/profile', data, success).fail(fail);
+			$.post('/fn/profile', data, success).fail(fail).always(always);
 		},
 		edit : function() {
-			$name.attr("disabled",undefined);
-			$lastName.attr("disabled",undefined);
+			$name.attr("readonly", null);
+			$lastName.attr("readonly", null);
 			$("#edit").data("state", "save");
 		},
 		cancel : function(e) {
 			var success = function(data, textStatus, jqXHR) {
-				$messageContainer.html(data);
-				controller.reloadList();
+				$formContainer.html(data);
 			}, fail = function(response) {
 				alert("error");
+			}, always = function(response) {
+				controller.reinit()
 			};
-			var id = $(this).attr("data");
-			$.ajax('/fn/enterprise/' + id, {
-				method : 'DELETE',
+			$.ajax('/fn/profile/cancel', {
+				method : 'GET',
 				"success" : success
-			}).fail(fail);
+			}).fail(fail).always(always);
 			$("#edit").data("state", "edit");
 		}
 	};
 	controller.init();
+	controller.reinit();
 })(jQuery);
