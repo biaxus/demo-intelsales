@@ -89,7 +89,7 @@ public class ProfileController {
 	@RequestMapping(value = "/fn/profile/cancel", method = RequestMethod.GET)
 	public String cancel(ModelMap model) {
 		model.clear();
-		return "redirect:/fn/profile";
+		return "redirect:/fn/profile?saveSuccess=false";
 	}
 
 }
