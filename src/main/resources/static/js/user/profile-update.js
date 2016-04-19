@@ -34,9 +34,17 @@
 			$.post('/fn/profile', data, success).fail(fail).always(always);
 		},
 		edit : function() {
-			$name.attr("readonly", null);
-			$lastName.attr("readonly", null);
-			$("#edit").data("state", "save");
+			var data = {
+				name : $name.val(),
+				lastName : $lastName.val()
+			},success = function(data, textStatus, jqXHR) {
+				$formContainer.html(data);
+			}, fail = function(response) {
+				alert("error");
+			}, always = function(response) {
+				controller.reinit();
+			};
+			$.post('/fn/profile/edit',data, success).fail(fail).always(always);
 		},
 		cancel : function(e) {
 			var success = function(data, textStatus, jqXHR) {

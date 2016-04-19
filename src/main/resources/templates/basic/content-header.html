@@ -3,9 +3,10 @@
 <head></head>
 <body>
 	<section th:fragment="content-header" class="content-header">
-		<ol class="breadcrumb">
+		<ol class="breadcrumb" style="position: static;padding: 0px">
 			<th:block th:replace="basic/breadcumb :: breadcumb(${viewList})"></th:block>
 		</ol>
+		<div style="clear: both;"></div>
 	</section>
 </body>
 </html>
