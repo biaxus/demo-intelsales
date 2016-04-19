@@ -5,6 +5,11 @@
 	layout:decorator="basic/layout">
 <head>
 <title th:text="#{view.dashboard.title}">Index</title>
+<!-- Select2 -->
+<link rel="stylesheet"
+	href="/webjars/adminlte/2.3.2/plugins/select2/select2.min.css" />
+<link rel="stylesheet"
+	href="/webjars/adminlte/2.3.2/dist/css/AdminLTE.min.css" />
 </head>
 <body>
 	<section class="content" layout:fragment="content">
@@ -17,12 +22,12 @@
 			<div class="col-xs-12">
 				<div class="box">
 					<div class="box-header with-border">
-						<h3 class="box-title">
+						<h5 class="box-title">
 							Ventas Ene-Oct/14 vs Ene-Oct/15 <i class="fa fa-angle-right"></i>
 							Región: Valle <i class="fa fa-angle-right"></i> Pdtos :Todos <i
 								class="fa fa-angle-right"></i> Clientes: Todos <i
 								class="fa fa-angle-right"></i> Reps:Todos
-						</h3>
+						</h5>
 
 						<div class="box-tools pull-right">
 							<button type="button" class="btn btn-box-tool"
@@ -32,7 +37,7 @@
 						</div>
 					</div>
 					<div class="box-body">
-						<div id="lineChart"
+						<div id="chart"
 							style="min-width: 310px; height: 250px; margin: 0 auto"></div>
 					</div>
 				</div>
@@ -40,6 +45,15 @@
 			<div class="col-xs-12">
 				<div class="box">
 					<!-- /.box-header -->
+					<div class="box-header with-border">
+						<h5 class="box-title">Data</h5>
+						<div class="box-tools pull-right">
+							<button type="button" class="btn btn-box-tool"
+								data-widget="collapse">
+								<i class="fa fa-minus"></i>
+							</button>
+						</div>
+					</div>
 					<div class="box-body table-responsive no-padding">
 						<table class="table table-hover" style="text-align: center;">
 							<tbody>
@@ -107,13 +121,47 @@
 				<!-- /.box -->
 			</div>
 		</div>
+		<div class="box box-default">
+			<div class="box-header with-border">
+				<h3 class="box-title">Filters</h3>
+
+				<div class="box-tools pull-right">
+					<button type="button" class="btn btn-box-tool"
+						data-widget="collapse">
+						<i class="fa fa-minus"></i>
+					</button>
+				</div>
+			</div>
+			<!-- /.box-header -->
+			<div class="box-body">
+				<div class="row">
+					<div class="col-md-2">
+						<div class="form-group">
+							<label>Sales Rep</label> <select id="optSalesRep"
+								class="form-control select2" style="width: 100%;">
+								<option value="0">Todos</option>
+								<option value="#REPRESENTANTE_1#">Jorge Borda</option>
+								<option value="#REPRESENTANTE_2#">Juan Perez</option>
+								<option value="#REPRESENTANTE_3#">Cristina Castro</option>
+							</select>
+						</div>
+					</div>
+					<!-- /.col -->
+				</div>
+				<!-- /.row -->
+			</div>
+		</div>
 	</section>
 	<div layout:fragment="custom-scripts">
 		<script type="text/javascript"
 			src="/webjars/highcharts/4.2.3/highcharts.js"></script>
 		<script type="text/javascript"
 			src="/webjars/highcharts/4.2.3/modules/exporting.js"></script>
-		<script type="text/javascript" src="/js/plugin/highcharts/theme/dark-unica.js"></script>
+		<script type="text/javascript"
+			src="/js/plugin/highcharts/theme/dark-unica.js"></script>
+		<!-- Select2 -->
+		<script
+			src="/webjars/adminlte/2.3.2/plugins/select2/select2.full.min.js"></script>
 		<script type="text/javascript" src="/js/dashboard/dashboard.js"></script>
 
 	</div>
