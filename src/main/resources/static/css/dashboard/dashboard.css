@@ -9,3 +9,7 @@ td.border-left{
 .no-margin{
 	margin: 0px !important;
 }
+
+span.badge{
+	width: 4em;
+}
