@@ -12,9 +12,29 @@ public class DashboardController {
 		return "dashboard/dashboard";
 	}
 	
+	@RequestMapping(value = { "/dashboard/dashboardComercialDivision" }, method = RequestMethod.GET)
+	public String dashboardComercialDivision() {
+		return "dashboard/dashboardComercialDivision";
+	}
+	
+	@RequestMapping(value = { "/dashboard/dashboardUnits" }, method = RequestMethod.GET)
+	public String dashboardComercialUnits() {
+		return "dashboard/dashboardUnits";
+	}
+	
+	@RequestMapping(value = { "/dashboard/dashboardUnitsDivision" }, method = RequestMethod.GET)
+	public String dashboardUnitsDivision() {
+		return "dashboard/dashboardUnitsDivision";
+	}
+	
 	@RequestMapping(value = { "/dashboard/detail" }, method = RequestMethod.GET)
 	public String detail() {
 		return "dashboard/detail";
+	}
+	
+	@RequestMapping(value = { "/dashboard/detailYearMobile" }, method = RequestMethod.GET)
+	public String detailYearMobile() {
+		return "dashboard/detailYearMobile";
 	}
 	
 }

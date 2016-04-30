@@ -17,12 +17,12 @@
 		changeChart : function(type) {
 			var data = [
 					{
-						name : '2016',
-						data : [ 4723, 2934, 9182, 3223, 2912]
+						name : '2015',
+						data : [ 2988,	3001,	3222,	3576,	3855,	3291,	2932,	3543,	3810,	4214,	3845,	3984 ]
 					},
 					{
-						name : '2015',
-						data : [ 5480, 3246, 8290, 5006, 2865 ]
+						name : '2016',
+						data : [ 3483,	3225,	4002,	3834,	3645,	2114,	4728,	4776,	2902,	2561,	4189,	3425]
 					} ];
 			if (type === 'line') {
 				// -------------
@@ -37,9 +37,9 @@
 						    	changeChartTitle: "Change chart"
 						     },
 							xAxis : {
-								categories : [ 'Jan', 'Feb', 'Mar', 'Apr',
-										'May'/*, 'Jun', 'Jul', 'Aug', 'Sep',
-										'Oct' , 'Nov', 'Dec' */]
+								categories : [ 'May-15', 'Jun-15', 'Jul-15', 'Aug-15',
+										'Sep-15', 'Oct-15', 'Nov-15', 'Dec-15', 'Jan-16',
+										'Feb-16' , 'Mar-16', 'Apr-16' ]
 							},
 							yAxis : {
 								title : {
@@ -92,9 +92,9 @@
 								text : ''
 							},
 							xAxis : {
-								categories : [ 'Jan', 'Feb', 'Mar', 'Apr',
-										'May'/*, 'Jun', 'Jul', 'Aug', 'Sep',
-										'Oct' , 'Nov', 'Dec'*/],
+								categories : [ 'May-15', 'Jun-15', 'Jul-15', 'Aug-15',
+												'Sep-15', 'Oct-15', 'Nov-15', 'Dec-15', 'Jan-16',
+												'Feb-16' , 'Mar-16', 'Apr-16' ],
 								crosshair : true
 							},
 							yAxis : {
