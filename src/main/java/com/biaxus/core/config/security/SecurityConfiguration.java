@@ -48,8 +48,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		http
 			.authorizeRequests()
-				.antMatchers("/")
-					.authenticated()
 				.antMatchers(
 						"/login",
 						"/logout",
@@ -69,6 +67,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 			http.authorizeRequests().antMatchers(a.getMethod(),a.getUrl()).hasAuthority(a.getAuthority());
 		}
 		http.authorizeRequests()
+				.antMatchers("/", "/**")
+				.authenticated()
 			.and()
 				.exceptionHandling()
 					.accessDeniedPage("/404?denied")
