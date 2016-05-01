@@ -13,6 +13,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.ui.context.ThemeSource;
 import org.springframework.ui.context.support.ResourceBundleThemeSource;
 import org.springframework.web.servlet.ThemeResolver;
+import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
 import org.springframework.web.servlet.theme.CookieThemeResolver;
 
 import com.biaxus.core.config.error.pages.EmbeddedServletContainerCustomizerImpl;
@@ -51,7 +52,7 @@ public class Application {
 		builder.indentOutput(true).modules(module, new ParameterNamesModule());
 		return builder;
 	}
-
+	
 	@Bean
 	public MessageSource messageSource() {
 		ResourceBundleMessageSource rbms = new ResourceBundleMessageSource();
