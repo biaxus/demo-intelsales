@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org"
 	xmlns:sec="http://www.thymeleaf.org"
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-	layout:decorator="basic/layout">
+	layout:decorator="basic/layout-external">
 <head>
 <title th:text="#{view.dashboard.title}">Index</title>
 <!-- Select2 -->
@@ -131,37 +131,8 @@
 				<!-- /.box -->
 			</div>
 		</div>
-		<div class="box box-default">
-			<div class="box-header with-border">
-				<h3 class="box-title">Filters</h3>
-
-				<div class="box-tools pull-right">
-					<button type="button" class="btn btn-box-tool"
-						data-widget="collapse">
-						<i class="fa fa-minus"></i>
-					</button>
-				</div>
-			</div>
-			<!-- /.box-header -->
-			<div class="box-body">
-				<div class="row">
-					<div class="col-md-2">
-						<div class="form-group">
-							<label>Sales Rep</label> <select id="optSalesRep"
-								class="form-control select2" style="width: 100%;">
-								<option value="0">Todos</option>
-								<option value="#REPRESENTANTE_1#">Jorge Borda</option>
-								<option value="#REPRESENTANTE_2#">Juan Perez</option>
-								<option value="#REPRESENTANTE_3#">Cristina Castro</option>
-							</select>
-						</div>
-					</div>
-					<!-- /.col -->
-				</div>
-				<!-- /.row -->
-			</div>
-		</div>
 	</section>
+	
 	<div layout:fragment="custom-scripts">
 		<script type="text/javascript"
 			src="/webjars/highcharts/4.2.3/highcharts.js"></script>

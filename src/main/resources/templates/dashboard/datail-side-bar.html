@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head></head>
+<body>
+	<th:block th:fragment="datail-side-bar">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-xs-12">
+					<h4 class="control-sidebar-heading">Filters</h4>
+					<div class="form-group">
+						<label>Sales Rep</label> <select id="optSalesRep" class="form-control select2" style="width: 100%;">
+							<option value="0">Todos</option>
+							<option value="#REPRESENTANTE_1#">Jorge Borda</option>
+							<option value="#REPRESENTANTE_2#">Juan Perez</option>
+							<option value="#REPRESENTANTE_3#">Cristina Castro</option>
+						</select>
+					</div>
+				</div>
+			</div>
+		</div>
+	</th:block>
+</body>
+</html>

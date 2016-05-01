@@ -24,11 +24,13 @@
 									<button type="submit" class="btn btn-default btn-block btn-flat">Logout</button>
 								</form>
 							</div>
-
 						</div>
 					</li>
 				</ul></li>
 			<li sec:authorize="!isAuthenticated()"><a href="#" th:href="@{/login}" th:text="#{view.login.signin}"></a></li>
+			<th:block th:if="${showSidebar}">
+				<li><a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a></li>
+			</th:block>
 		</ul>
 	</div>
 </body>

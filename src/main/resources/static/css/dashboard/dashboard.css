@@ -1,15 +1,11 @@
-tr.layout, tr.layout td{
-	padding: 0px !important;
-}
-
-td.border-left{
+td.border-left {
 	border-left: 1px solid #f4f4f4;
 }
 
-.no-margin{
+.no-margin {
 	margin: 0px !important;
 }
 
-span.badge{
+span.badge {
 	width: 4em;
 }
