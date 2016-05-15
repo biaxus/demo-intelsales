@@ -13,7 +13,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.ui.context.ThemeSource;
 import org.springframework.ui.context.support.ResourceBundleThemeSource;
 import org.springframework.web.servlet.ThemeResolver;
-import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
 import org.springframework.web.servlet.theme.CookieThemeResolver;
 
 import com.biaxus.core.config.error.pages.EmbeddedServletContainerCustomizerImpl;
@@ -52,7 +51,7 @@ public class Application {
 		builder.indentOutput(true).modules(module, new ParameterNamesModule());
 		return builder;
 	}
-	
+
 	@Bean
 	public MessageSource messageSource() {
 		ResourceBundleMessageSource rbms = new ResourceBundleMessageSource();
@@ -94,7 +93,7 @@ public class Application {
 	// @formatter:on
 		return (args) -> {
 			// List<Authority> authorityList = new ArrayList<>();
-			// String[] dashboard = new String[]{"DASHBOARD"};
+			// String[] dashboard = new String[] { "CLIENT_ABM" };
 			// AuthorityId aid = new AuthorityId();
 			// aid.setKey(dashboard[0]);
 			// aid.setType(AuthorityType.VIEW);
@@ -103,18 +102,18 @@ public class Application {
 			// authorityList.add(_a);
 			//
 			// Role role = new Role();
-			// role.setId("USER_DASHBOARD");
+			// role.setId("ADMIN_INTELSALES");
 			// role.setDescription("");
 			// roleRepository.save(role);
 			//
 			// int maxRoles = 1;
 			// List<Authority> randomAuthorityList = new ArrayList<>();
 			//
-			// Enterprise e = repository.findOne(163L);
+			// Enterprise e = repository.findOne("INTELSALES");
 			//
 			// User u = new User();
-			// u.setUsername("demo");
-			// u.setPassword(passwordEncoder.encode("demo"));
+			// u.setUsername("admin.intelsales");
+			// u.setPassword(passwordEncoder.encode("admin.intelsales"));
 			// u.setEnabled(true);
 			// u.setAccountNonExpired(true);
 			// u.setAccountNonLocked(true);
@@ -130,7 +129,7 @@ public class Application {
 			// for (int i = 0; i < maxRoles;) {
 			// int index = i;
 			// if (randomAuthorityList.contains(authorityList.get(index)))
-			// continue; 
+			// continue;
 			// randomAuthorityList.add(authorityList.get(index));
 			// i++;
 			// }

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="basic/layout">
+<head>
+<title th:text="#{view.user.abm.title}">Index</title>
+<link rel="stylesheet" href="/webjars/datatables/1.10.11/css/dataTables.bootstrap.css" ></link>
+</head>
+<body >
+	<section class="content" layout:fragment="content">
+		<div id="formContainer" class="box" th:include="user/user-form :: user-form"></div>
+		<div class="box">
+			<div class="box-header with-border">
+				<h3 class="box-title" th:text="#{view.user.abm.list}">Lista de User</h3>
+			</div>
+			<div id="listContainer" class="box-body" th:include="user/user-list :: user-list"></div>
+		</div>
+	</section>
+	<div layout:fragment="custom-scripts">
+		<script type="text/javascript" src="/js/user/abm.js"></script>
+		<script type="text/javascript" src="/webjars/datatables/1.10.11/js/jquery.dataTables.js"></script>
+		<script type="text/javascript" src="/webjars/datatables/1.10.11/js/dataTables.bootstrap.js"></script>
+	</div>
+</body>
+</html>

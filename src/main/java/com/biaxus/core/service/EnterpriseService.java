@@ -18,10 +18,6 @@ public class EnterpriseService {
 		return (List<Enterprise>) repository.findAll();
 	}
 
-	public List<Enterprise> findWithCycle() {
-		return (List<Enterprise>) repository.findWithCycle();
-	}
-
 	public Enterprise save(Enterprise enterprise) {
 		return repository.save(enterprise);
 	}
@@ -35,8 +31,11 @@ public class EnterpriseService {
 	}
 
 	public List<Enterprise> findByDescription(String description) {
-		return repository.findByDescription(description);
-		
+		return repository.findByDescription(description);	
+	}
+	
+	public List<Enterprise> findWithCycle() {
+		return (List<Enterprise>) repository.findWithCycle();
 	}
 
 }

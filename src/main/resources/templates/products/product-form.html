@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org">
+<head></head>
+<body>
+	<th:block th:fragment="enterprise-form">
+		<form id="enterpriseForm" name="enterpriseForm" th:object="${enterprise}" role="form" novalidate="novalidate">
+			<div class="form-group" th:classappend="${#fields.hasErrors('description')?'has-error':''}">
+				<label th:if="${#fields.hasErrors('description')}"><i
+					class="fa fa-times-circle-o"></i><span th:errors="*{description}">Description is required</span></label>
+				<div class="input-group">
+					<input type="text" th:field="*{description}" class="form-control"
+						placeholder="Enter the description..." required="required" /> <span class="input-group-btn">
+						<button class="btn btn-default" type="submit" title="Agregar">
+							<span class="glyphicon glyphicon-plus"></span>
+						</button>
+					</span>
+				</div>
+			</div>
+		</form>
+	</th:block>
+</body>
+</html>

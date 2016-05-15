@@ -2,11 +2,11 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org">
 <head></head>
 <body>
-	<th:block th:fragment="detail-table">
-		<div class="alert alert-info" th:if="${#lists.isEmpty(demobillList)}" th:text="#{view.dashboard.table.noData}">No hay datos creados</div>
-		<div class="form-group" th:if="${not #lists.isEmpty(demobillList)}" th:each="demobill : ${demobillList}" th:object="${demobill}">
+	<th:block th:fragment="enterprise-list">
+		<div class="alert alert-info" th:if="${#lists.isEmpty(enterpriseList)}">No hay datos creados</div>
+		<div class="form-group" th:if="${not #lists.isEmpty(enterpriseList)}" th:each="enterprise : ${enterpriseList}" th:object="${enterprise}">
 			<div class="checkbox col-xs-9">
-				<label th:text="*{seller}"> </label>
+				<label th:text="*{description}"> </label>
 			</div>
 			<div class="col-xs-3">
 				<button name="delete" class="pull-right btn btn-danger" type="button" th:data="*{id}">

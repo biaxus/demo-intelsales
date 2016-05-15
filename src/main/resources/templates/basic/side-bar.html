@@ -4,7 +4,7 @@
 <body>
 	<th:block th:fragment="side-bar">
 		<aside class="control-sidebar control-sidebar-dark">
-			<div layout:fragment="side-bar-content">default content</div>
+			<div layout:fragment="side-bar-content" th:text="#{app.label.defaultSideBar}">default content</div>
 		</aside>
 		<div class="control-sidebar-bg"></div>
 	</th:block>

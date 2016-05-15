@@ -6,9 +6,9 @@
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-xs-12">
-					<h4 class="control-sidebar-heading">Filters</h4>
+					<h4 class="control-sidebar-heading" th:text="#{view.dashboard.filters}">Filters</h4>
 					<div class="form-group">
-						<label>Sales Rep</label> <select id="optSalesRep" class="form-control select2" style="width: 100%;">
+						<label th:text="#{view.dashboard.salesRep}">Sales Rep</label> <select id="optSalesRep" class="form-control select2" style="width: 100%;">
 							<option value="0">Todos</option>
 							<option value="#REPRESENTANTE_1#">Jorge Borda</option>
 							<option value="#REPRESENTANTE_2#">Juan Perez</option>

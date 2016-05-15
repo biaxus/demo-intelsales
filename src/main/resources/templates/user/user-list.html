@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org">
+<head></head>
+<body>
+	<th:block th:fragment="user-list">
+		<div class="alert alert-info" th:if="${#lists.isEmpty(userList)}" th:text="#{view.user.abm.noData}">No Data Found</div>
+		<table id="userTable" class="table table-bordered" th:if="${not #lists.isEmpty(userList)}">
+			<thead>
+				<tr>
+					<th th:text="#{view.user.abm.name}">Name</th>
+					<th th:text="#{view.user.abm.lastName}">LastName</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="user : ${userList}" th:object="${user}">
+					<td th:text="*{name}"></td>
+					<td th:text="*{lastName}"></td>
+					<td style="text-align:center;width:70px;">
+						<button name="edit" class="btn btn-xs btn-primary" type="button" th:data="*{username}">
+							<i class="fa fa-pencil"></i>
+						</button>
+						<button name="delete" class="btn btn-xs btn-danger" type="button" th:data="*{username}">
+							<i class="fa fa-trash-o"></i>
+						</button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</th:block>
+</body>
+</html>

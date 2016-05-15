@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org">
+<head></head>
+<body>
+	<th:block th:fragment="client-form">
+		<form id="clientForm" name="clientForm" th:object="${client}" role="form" novalidate="novalidate">
+			<div class="box-header with-border">
+				<h3 class="box-title" th:text="#{view.client.abm.title}"></h3>
+			</div>
+			<div class="box-body">
+				<div id="messageContainer">
+					<th:block th:if="${saveSuccess}" th:include="basic/alert::alert(${'client.abm.saveSuccess'},${'success'})"></th:block>
+				</div>
+				<div class="form-group" th:classappend="${#fields.hasErrors('name')?'has-error':''}">
+					<label th:if="${#fields.hasErrors('name')}"><i class="fa fa-times-circle-o"></i><span th:errors="*{name}">Name is required</span></label> <br
+						th:if="${#fields.hasErrors('name')}" /> <label for="name" th:text="#{view.client.abm.name}">Name</label> 
+						<input type="text" th:field="*{name}"
+						class="form-control input-sm" th:placeholder="#{view.client.abm.name}" th:readonly="${not isNew}" required="required"></input>
+				</div>
+				<div class="form-group" th:classappend="${#fields.hasErrors('description')?'has-error':''}">
+					<label th:if="${#fields.hasErrors('description')}"><i class="fa fa-times-circle-o"></i><span th:errors="*{description}">description
+							is required</span></label> <br th:if="${#fields.hasErrors('description')}" /> <label for="description" th:text="#{view.client.abm.description}">Description</label>
+					<input type="text" th:field="*{description}" th:readonly="${not isNew}" class="form-control input-sm" th:placeholder="#{view.client.abm.description}"
+						required="required"></input>
+				</div>
+				<input type="hidden" th:field="*{id}"></input>
+			</div>
+			<div class="box-footer">
+				<div class="row">
+					<div class="col-sm-6" style="text-align: left;">
+						<button id="new" type="button" th:attr="data-state=${isNew?'save':'new'}" class="btn btn-primary btn-sm"
+							th:text="${isNew?#messages.msg('view.client.abm.save'):#messages.msg('view.client.abm.new')}">New</button>
+					</div>
+					<div class="col-sm-6" style="text-align: right;">
+						<button id="cancel" type="button" class="btn btn-sm btn-danger" th:text="#{view.client.abm.cancel}">Cancel</button>
+					</div>
+				</div>
+			</div>
+		</form>
+	</th:block>
+</body>
+</html>

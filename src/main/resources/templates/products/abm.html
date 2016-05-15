@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="basic/layout">
+<head>
+<title th:text="#{view.enterprise.abm.title}">Index</title>
+</head>
+<body >
+	<section class="content" layout:fragment="content">
+		<div id="messageContainer"></div>
+		<div class="box">
+			<div id="formContainer" class="box-body" th:include="enterprise/enterprise-form :: enterprise-form"></div>
+		</div>
+		<div class="box">
+			<div class="box-header with-border">
+				<h3 class="box-title" th:text="#{view.enterprise.abm.list}">Lista de empresas</h3>
+			</div>
+			<div id="listContainer" class="box-body" th:include="enterprise/enterprise-list :: enterprise-list"></div>
+		</div>
+	</section>
+	<div layout:fragment="custom-scripts">
+		<script type="text/javascript" src="/js/enterprise/abm.js"></script>
+	</div>
+</body>
+</html>

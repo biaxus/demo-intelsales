@@ -53,7 +53,7 @@ public class User implements UserDetails, CredentialsContainer {
 	private boolean credentialsNonExpired;
 	@Column(name = "ENABLED", nullable = false)
 	private boolean enabled;
-	
+
 	@Column(name = "NAME", nullable = false)
 	private String name;
 	@Column(name = "LAST_NAME", nullable = false)
@@ -67,7 +67,7 @@ public class User implements UserDetails, CredentialsContainer {
 	@JsonManagedReference("UserAuthority.user")
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
 	private Set<UserAuthority> userAuthorityList;
-	
+
 	@JsonBackReference("RememberMeToken.user")
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
 	private Set<RememberMeToken> rememberMeTokenList;
@@ -144,7 +144,7 @@ public class User implements UserDetails, CredentialsContainer {
 	public void setEnabled(boolean enabled) {
 		this.enabled = enabled;
 	}
-	
+
 	public String getName() {
 		return name;
 	}
@@ -212,19 +212,19 @@ public class User implements UserDetails, CredentialsContainer {
 	public Map<Setting, String> getSettings() {
 		if (this.settings != null)
 			return this.settings;
-		Map <Setting, String> settings = new HashMap<>();
- 		this.enterprise.getEnterpiseSettings().forEach((setting) -> {
- 			settings.put(setting.getId().getKey(), setting.getValue());
+		Map<Setting, String> settings = new HashMap<>();
+		this.enterprise.getEnterpiseSettings().forEach((setting) -> {
+			settings.put(setting.getId().getKey(), setting.getValue());
 		});
 		this.roleList.forEach((role) -> {
 			role.getRoleSettings().forEach((setting) -> {
-	 			settings.put(setting.getId().getKey(), setting.getValue());
+				settings.put(setting.getId().getKey(), setting.getValue());
 			});
 		});
 		this.getUserSettings().forEach((setting) -> {
- 			settings.put(setting.getId().getKey(), setting.getValue());
+			settings.put(setting.getId().getKey(), setting.getValue());
 		});
-		this.settings = settings;		
+		this.settings = settings;
 		return this.settings;
 	}
 
@@ -286,18 +286,30 @@ public class User implements UserDetails, CredentialsContainer {
 			return g1.getAuthority().compareTo(g2.getAuthority());
 		}
 	}
-
+	
 	@Override
-	public boolean equals(Object rhs) {
-		if (rhs instanceof User) {
-			return username.equals(((User) rhs).username);
-		}
-		return false;
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((username == null) ? 0 : username.hashCode());
+		return result;
 	}
 
 	@Override
-	public int hashCode() {
-		return username.hashCode();
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		User other = (User) obj;
+		if (username == null) {
+			if (other.username != null)
+				return false;
+		} else if (!username.equals(other.username))
+			return false;
+		return true;
 	}
 
 	@Override

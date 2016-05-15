@@ -107,9 +107,9 @@
 			<version>2.1.8</version>
 		</dependency>
 		<dependency>
-		    <groupId>org.webjars</groupId>
-		    <artifactId>highcharts</artifactId>
-		    <version>4.2.3</version>
+			<groupId>org.webjars</groupId>
+			<artifactId>highcharts</artifactId>
+			<version>4.2.3</version>
 		</dependency>
 		<dependency>
 			<groupId>org.webjars</groupId>
@@ -120,14 +120,26 @@
 			<groupId>org.webjars</groupId>
 			<artifactId>font-awesome</artifactId>
 			<version>4.4.0</version>
-		</dependency>		
+		</dependency>
+		<dependency>
+			<groupId>org.webjars.bower</groupId>
+			<artifactId>flag-icon-css</artifactId>
+			<version>2.1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>datatables</artifactId>
+			<version>1.10.11</version>
+		</dependency>
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>datatables-plugins</artifactId>
+			<version>1.10.11-1</version>
+		</dependency>
 	</dependencies>
-
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
-
-
 	<build>
 		<plugins>
 			<plugin>

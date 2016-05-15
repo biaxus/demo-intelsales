@@ -36,7 +36,7 @@ public class ProfileController {
 	@RequestMapping(value = "/profile", method = RequestMethod.GET)
 	public String profile(Profile profile, Model model, Principal principal) {
 		initModel(profile, model, principal, false);
-		return "user/profile-update";
+		return "profile/profile-update";
 	}
 	
 	private void initModel(Profile profile, Model model, Principal principal, boolean saveSuccess){
@@ -55,21 +55,21 @@ public class ProfileController {
 	@RequestMapping(value = { "/fn/profile/edit" }, method = RequestMethod.POST)
 	public String addEdit(Profile profile,BindingResult bindingResult, Model model) {
 		model.addAttribute("isEdit", true);
-		return "user/profile-update-form :: profile-update-form";
+		return "profile/profile-update-form :: profile-update-form";
 	}
 	
 	@RequestMapping(value = { "/fn/profile" }, method = RequestMethod.GET)
 	public String addProfile(Profile profile, Model model, Principal principal, @RequestParam("saveSuccess") boolean saveSuccess) {
 		initModel(profile, model, principal, saveSuccess);
 		
-		return "user/profile-update-form :: profile-update-form";
+		return "profile/profile-update-form :: profile-update-form";
 	}
 	
 	@RequestMapping(value = "/fn/profile", method = RequestMethod.POST)
 	public String save(@Valid Profile profile, BindingResult bindingResult, ModelMap model, Principal principal) {
 		if (bindingResult.hasErrors()){
 			model.addAttribute("isEdit", true);
-			return "user/profile-update-form :: profile-update-form";
+			return "profile/profile-update-form :: profile-update-form";
 		}
 		User user = null;
 		if (principal != null) {

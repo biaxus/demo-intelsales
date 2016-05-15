@@ -1,5 +1,7 @@
 package com.biaxus.core.config.web;
 
+import java.util.Locale;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
@@ -27,6 +29,9 @@ public class WebConfiguration extends WebMvcConfigurerAdapter {
 	
 	@Bean
 	public CookieLocaleResolver localeResolver(){
-		return new CookieLocaleResolver();
+		CookieLocaleResolver localeResolver = new CookieLocaleResolver();
+		Locale defaultLocale = Locale.forLanguageTag("es_ES");
+		localeResolver.setDefaultLocale(defaultLocale);
+		return localeResolver;
 	}
 }

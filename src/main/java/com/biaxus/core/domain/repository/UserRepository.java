@@ -1,5 +1,7 @@
 package com.biaxus.core.domain.repository;
 
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
@@ -25,4 +27,6 @@ public interface UserRepository extends JpaRepository<User, String> {
 			+ "where u.username = ?1")
 	// @formatter:on
 	User login(String username);
+	
+	List <User> findByRoleListIdEquals(String role);
 }

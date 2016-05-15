@@ -1,17 +1,12 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org"
-	xmlns:sec="http://www.thymeleaf.org"
-	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 	layout:decorator="basic/layout-external">
 <head>
 <title th:text="#{view.dashboard.title}">Index</title>
 <!-- Select2 -->
-<link rel="stylesheet"
-	href="/webjars/adminlte/2.3.2/plugins/select2/select2.min.css" />
-<link rel="stylesheet"
-	href="/webjars/adminlte/2.3.2/dist/css/AdminLTE.min.css" />
-<link rel="stylesheet"
-	href="/css/dashboard/dashboard.css" />
+<link rel="stylesheet" href="/webjars/adminlte/2.3.2/plugins/select2/select2.min.css" />
+<link rel="stylesheet" href="/webjars/adminlte/2.3.2/dist/css/AdminLTE.min.css" />
+<link rel="stylesheet" href="/css/dashboard/dashboard.css" />
 </head>
 <body>
 	<section class="content" layout:fragment="content">
@@ -24,23 +19,15 @@
 			<div class="col-xs-12">
 				<div class="box">
 					<div class="box-header with-border">
-						<h5 class="box-title">
-							Ventas Valores Año Movil <i class="fa fa-angle-right"></i>
-							Región: Colombia <i class="fa fa-angle-right"></i> Productos: Todos <i
-								class="fa fa-angle-right"></i> Clientes: Todos <i
-								class="fa fa-angle-right"></i> Reps: Todos
-						</h5>
-
+						<h5 class="box-title" th:utext="#{view.dashboard.headerDetailYearMobile}"></h5>
 						<div class="box-tools pull-right">
-							<button type="button" class="btn btn-box-tool"
-								data-widget="collapse">
+							<button type="button" class="btn btn-box-tool" data-widget="collapse">
 								<i class="fa fa-minus"></i>
 							</button>
 						</div>
 					</div>
 					<div class="box-body">
-						<div id="chart"
-							style="min-width: 310px; height: 250px; margin: 0 auto"></div>
+						<div id="chart" style="min-width: 310px; height: 250px; margin: 0 auto"></div>
 					</div>
 				</div>
 			</div>
@@ -48,10 +35,9 @@
 				<div class="box">
 					<!-- /.box-header -->
 					<div class="box-header with-border">
-						<h5 class="box-title">Data</h5>
+						<h5 class="box-title" th:text="#{view.dashboard.data}">Data</h5>
 						<div class="box-tools pull-right">
-							<button type="button" class="btn btn-box-tool"
-								data-widget="collapse">
+							<button type="button" class="btn btn-box-tool" data-widget="collapse">
 								<i class="fa fa-minus"></i>
 							</button>
 						</div>
@@ -60,20 +46,20 @@
 						<table class="table table-hover" style="text-align: center;">
 							<tbody>
 								<tr>
-									<th style="width: 6%; text-align: center;">Year</th>
-									<th style="width: 6%;">Total COP</th>
-									<th style="width: 6%;">May-15</th>
-									<th style="width: 6%;">Jun-15</th>
-									<th style="width: 6%;">Jul-15</th>
-									<th style="width: 6%;">Aug-15</th>
-									<th style="width: 6%;">Sep-15</th>
-									<th style="width: 6%;">Oct-15</th>
-									<th style="width: 6%;">Nov-15</th>
-									<th style="width: 6%;">Dec-15</th>
-									<th style="width: 6%;">Jan-16</th>
-									<th style="width: 6%;">Feb-16</th>
-									<th style="width: 6%;">Mar-16</th>
-									<th style="width: 6%;">Apr-16</th>
+									<th style="width: 6%; text-align: center;" th:text="#{view.dashboard.year}">Year</th>
+									<th style="width: 6%;" th:text="#{view.dashboard.TotalCop}">Total COP</th>
+									<th style="width: 6%;"><span th:text="#{view.dashboard.may}">May</span>-15</th>
+									<th style="width: 6%;"><span th:text="#{view.dashboard.june}">Jun</span>-15</th>
+									<th style="width: 6%;"><span th:text="#{view.dashboard.july}">Jul</span>-15</th>
+									<th style="width: 6%;"><span th:text="#{view.dashboard.august}">Aug</span>-15</th>
+									<th style="width: 6%;"><span th:text="#{view.dashboard.september}">Sep</span>-15</th>
+									<th style="width: 6%;"><span th:text="#{view.dashboard.october}">Oct</span>-15</th>
+									<th style="width: 6%;"><span th:text="#{view.dashboard.november}">Nov</span>-15</th>
+									<th style="width: 6%;"><span th:text="#{view.dashboard.december}">Dec</span>-15</th>
+									<th style="width: 6%;"><span th:text="#{view.dashboard.january}">Jan</span>-16</th>
+									<th style="width: 6%;"><span th:text="#{view.dashboard.february}">Feb</span>-16</th>
+									<th style="width: 6%;"><span th:text="#{view.dashboard.march}">Mar</span>-16</th>
+									<th style="width: 6%;"><span th:text="#{view.dashboard.april}">Apr</span>-16</th>
 								</tr>
 								<tr>
 									<td style="width: 6%;">(+/-)</td>
@@ -94,34 +80,34 @@
 								<tr>
 									<td>2016</td>
 									<td style="font-weight: bolder">42,884</td>
-									<td>3,483</td>	
-									<td>3,225</td>	
-									<td>4,002</td>	
-									<td>3,834</td>	
-									<td>3,645</td>	
-									<td>2,114</td>	
-									<td>4,728</td>	
-									<td>4,776</td>	
-									<td>2,902</td>	
-									<td>2,561</td>	
-									<td>4,189</td>	
+									<td>3,483</td>
+									<td>3,225</td>
+									<td>4,002</td>
+									<td>3,834</td>
+									<td>3,645</td>
+									<td>2,114</td>
+									<td>4,728</td>
+									<td>4,776</td>
+									<td>2,902</td>
+									<td>2,561</td>
+									<td>4,189</td>
 									<td>3,425</td>
 								</tr>
 								<tr>
 									<td>2015</td>
 									<td style="font-weight: bolder">42,261</td>
-									<td>2,988</td>	
-									<td>3,001</td>	
-									<td>3,222</td>	
-									<td>3,576</td>	
-									<td>3,855</td>	
-									<td>3,291</td>	
-									<td>2,932</td>	
-									<td>3,543</td>	
-									<td>3,810</td>	
-									<td>4,214</td>	
-									<td>3,845</td>	
-									<td>3,984</td>									
+									<td>2,988</td>
+									<td>3,001</td>
+									<td>3,222</td>
+									<td>3,576</td>
+									<td>3,855</td>
+									<td>3,291</td>
+									<td>2,932</td>
+									<td>3,543</td>
+									<td>3,810</td>
+									<td>4,214</td>
+									<td>3,845</td>
+									<td>3,984</td>
 								</tr>
 							</tbody>
 						</table>
@@ -132,17 +118,13 @@
 			</div>
 		</div>
 	</section>
-	
+
 	<div layout:fragment="custom-scripts">
-		<script type="text/javascript"
-			src="/webjars/highcharts/4.2.3/highcharts.js"></script>
-		<script type="text/javascript"
-			src="/webjars/highcharts/4.2.3/modules/exporting.js"></script>
-		<script type="text/javascript"
-			src="/js/plugin/highcharts/theme/dark-unica.js"></script>
+		<script type="text/javascript" src="/webjars/highcharts/4.2.3/highcharts.js"></script>
+		<script type="text/javascript" src="/webjars/highcharts/4.2.3/modules/exporting.js"></script>
+		<script type="text/javascript" src="/js/plugin/highcharts/theme/dark-unica.js"></script>
 		<!-- Select2 -->
-		<script
-			src="/webjars/adminlte/2.3.2/plugins/select2/select2.full.min.js"></script>
+		<script src="/webjars/adminlte/2.3.2/plugins/select2/select2.full.min.js"></script>
 		<script type="text/javascript" src="/js/dashboard/detailYearMobile.js"></script>
 
 	</div>

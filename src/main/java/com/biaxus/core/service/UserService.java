@@ -1,5 +1,7 @@
 package com.biaxus.core.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,7 +18,19 @@ public class UserService {
 		return userRepository.findOne(username);
 	}
 	
+	public List<User> findAll(){
+		return userRepository.findAll();
+	}
+	
+	public List<User> findAllSellers(){
+		return userRepository.findByRoleListIdEquals("SELLER");
+	}
+	
 	public void save(User user){
 		userRepository.save(user);
+	}
+	
+	public void delete(String username){
+		userRepository.delete(username);
 	}
 }
