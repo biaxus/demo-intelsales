@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org">
+<head></head>
+<body>
+	<th:block th:fragment="city-list">
+		<div class="alert alert-info" th:if="${#lists.isEmpty(cityList)}" th:text="#{view.city.abm.noData}">No Data Found</div>
+		<table id="cityTable" class="table table-bordered" th:if="${not #lists.isEmpty(cityList)}">
+			<thead>
+				<tr>
+					<th th:text="#{view.city.abm.id}">Id</th>
+					<th th:text="#{view.city.abm.name}">Name</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="city : ${cityList}" th:object="${city}">
+					<td th:text="*{id}"></td>
+					<td th:text="*{name}"></td>
+					<td style="text-align:center;width:70px;">
+						<button name="edit" class="btn btn-xs btn-primary" type="button" th:data="*{id}">
+							<i class="fa fa-pencil"></i>
+						</button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</th:block>
+</body>
+</html>
